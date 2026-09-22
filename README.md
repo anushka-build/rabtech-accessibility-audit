@@ -53,7 +53,7 @@ rabtech-accessibility-audit/
 ├── docs/
 │   └── README.md
 │
-├── tests/
+├── test/
 │   └── README.md
 │
 ├── accessibility-audit-report.xlsx
