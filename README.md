@@ -45,17 +45,19 @@ The project follows a monorepo-style structure:
 rabtech-accessibility-audit/
 │
 ├── client/
-│   └── README.md
+│   └── .gitkeep
 │
 ├── server/
-│   └── README.md
+│   └── .gitkeep
 │
 ├── docs/
-│   └── README.md
+│   ├── .gitkeep
+│   ├── audit-report.md
+│   └── architecture.md
 │
 ├── test/
+│   ├── .gitkeep
 │   └── README.md
 │
 ├── accessibility-audit-report.xlsx
-├── README.md
-└── .gitignore
+└── README.md
