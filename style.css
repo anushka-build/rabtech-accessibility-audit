@@ -1,0 +1,273 @@
+/* =========================
+   Design Tokens
+   ========================= */
+
+:root {
+    --primary: #1e3a8a;
+    --primary-dark: #172554;
+    --background: #f4f7fb;
+    --surface: #ffffff;
+    --text: #172033;
+    --muted: #475569;
+    --border: #cbd5e1;
+    --focus: #f59e0b;
+    --success: #166534;
+}
+
+/* =========================
+   Global Styles
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 24px;
+}
+
+header h1 {
+    margin: 0 0 16px;
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* =========================
+   Main Layout
+   ========================= */
+
+.layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* =========================
+   Sidebar
+   ========================= */
+
+aside {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+aside h2 {
+    margin-top: 0;
+}
+
+aside ul {
+    padding-left: 20px;
+}
+
+aside a {
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+/* =========================
+   Content Sections
+   ========================= */
+
+main {
+    min-width: 0;
+}
+
+section,
+article {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+h2 {
+    color: var(--primary-dark);
+}
+
+h3 {
+    color: var(--primary-dark);
+}
+
+/* =========================
+   Table
+   ========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: white;
+}
+
+caption {
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #dbeafe;
+    color: var(--primary-dark);
+}
+
+/* =========================
+   Forms
+   ========================= */
+
+form {
+    max-width: 650px;
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    font: inherit;
+    color: var(--text);
+    background: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+/* =========================
+   Keyboard Focus
+   ========================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 4px solid var(--focus);
+    outline-offset: 3px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+    background: var(--primary-dark);
+    color: white;
+    text-align: center;
+    padding: 24px;
+}
+
+/* =========================
+   Mobile Responsive Design
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .layout {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    header {
+        padding: 20px 16px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+    }
+
+    section,
+    article {
+        padding: 18px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}

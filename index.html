@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accessible Enterprise Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Accessible Enterprise Dashboard</h1>
+
+        <nav aria-label="Main navigation">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#users">Users</a>
+            <a href="#reports">Reports</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <aside aria-label="Sidebar navigation">
+            <h2>Quick Links</h2>
+
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#users">Users</a></li>
+                <li><a href="#reports">Reports</a></li>
+            </ul>
+        </aside>
+
+        <main id="dashboard">
+
+            <section aria-labelledby="welcome-heading">
+                <h2 id="welcome-heading">Welcome</h2>
+                <p>
+                    This dashboard demonstrates semantic HTML5
+                    and accessible component architecture.
+                </p>
+            </section>
+
+            <section id="users" aria-labelledby="users-heading">
+                <h2 id="users-heading">User Information</h2>
+
+                <table>
+                    <caption>User account information</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Role</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Anushka</td>
+                            <td>anushka@example.com</td>
+                            <td>Student</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rahul</td>
+                            <td>rahul@example.com</td>
+                            <td>Developer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="reports" aria-labelledby="reports-heading">
+                <h2 id="reports-heading">Reports</h2>
+
+                <article>
+                    <h3>Monthly Report</h3>
+                    <p>Monthly system activity report is available.</p>
+                    <button type="button" id="openReport">
+    View Report
+</button>
+
+<dialog id="reportDialog" aria-labelledby="dialogTitle">
+    <h2 id="dialogTitle">Monthly Report</h2>
+
+    <p>
+        This report contains the monthly system activity
+        and performance information.
+    </p>
+
+    <button type="button" id="closeReport">
+        Close Report
+    </button>
+</dialog>
+                </article>
+            </section>
+
+            <section id="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Contact Form</h2>
+
+                <form>
+
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            aria-required="true"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            aria-required="true"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            required
+                            aria-required="true"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+
+                </form>
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Accessible Enterprise Dashboard</p>
+    </footer>
+<script>
+    const reportDialog = document.getElementById("reportDialog");
+    const openReport = document.getElementById("openReport");
+    const closeReport = document.getElementById("closeReport");
+
+    openReport.addEventListener("click", () => {
+        reportDialog.showModal();
+    });
+
+    closeReport.addEventListener("click", () => {
+        reportDialog.close();
+    });
+</script>
+</body>
+</html>
