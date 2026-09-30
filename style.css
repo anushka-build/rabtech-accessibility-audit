@@ -271,3 +271,304 @@ footer {
         overflow-x: auto;
     }
 }
+
+:root {
+  --primary: #1e3a8a;
+  --primary-dark: #172554;
+  --background: #f4f7fb;
+  --surface: rgba(255, 255, 255, 0.88);
+  --text: #172033;
+  --muted: #475569;
+  --border: #cbd5e1;
+  --focus: #f59e0b;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* Global responsive safety */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent 35%),
+    var(--background);
+}
+
+/* Smooth UI transitions */
+a,
+button,
+input,
+textarea,
+section,
+article,
+aside {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Glassmorphism surfaces */
+section,
+article,
+aside {
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+}
+
+/* Hover effect */
+section:hover,
+article:hover,
+aside:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Navigation hover */
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+/* Button hover */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive tables without page overflow */
+table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+th,
+td {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Responsive images */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================================
+   320px - SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 479px) {
+
+  header {
+    padding: 16px 12px;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 12px;
+  }
+
+  aside,
+  section,
+  article {
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+
+  nav {
+    gap: 6px;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+  }
+
+  table {
+    font-size: 0.78rem;
+  }
+
+  th,
+  td {
+    padding: 7px;
+  }
+
+  button {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  input,
+  textarea {
+    min-height: 44px;
+  }
+
+  footer {
+    padding: 18px 12px;
+  }
+}
+
+/* =========================================
+   768px - TABLET
+   ========================================= */
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+  .layout {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    flex: 1 1 140px;
+    text-align: center;
+  }
+
+  section,
+  article,
+  aside {
+    padding: 20px;
+  }
+}
+
+/* =========================================
+   1024px - DESKTOP / LAPTOP
+   ========================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .layout {
+    grid-template-columns: 200px 1fr;
+    gap: 18px;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  section,
+  article {
+    padding: 20px;
+  }
+
+  header {
+    padding: 22px;
+  }
+}
+
+/* =========================================
+   1440px - LARGE DESKTOP
+   ========================================= */
+
+@media (min-width: 1024px) {
+
+  .layout {
+    grid-template-columns: 260px minmax(0, 1fr);
+    max-width: 1440px;
+    gap: 28px;
+    padding: 32px;
+  }
+
+  section,
+  article,
+  aside {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  header {
+    padding: 28px 32px;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* =========================================
+   DARK THEME
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --background: #0f172a;
+    --surface: rgba(30, 41, 59, 0.88);
+    --text: #f8fafc;
+    --muted: #cbd5e1;
+    --border: #475569;
+    --primary: #3b82f6;
+    --primary-dark: #1e3a8a;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent 35%),
+      var(--background);
+  }
+
+  input,
+  textarea,
+  table {
+    background: #1e293b;
+    color: var(--text);
+  }
+
+  th {
+    background: #1e3a8a;
+    color: #ffffff;
+  }
+}
+
+/* Accessibility: reduce animation when requested */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
