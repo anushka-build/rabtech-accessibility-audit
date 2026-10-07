@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RabTech Enterprise Management Capstone">
+    <title>RabTech Enterprise Manager</title>
+    <link rel="stylesheet" href="capstone.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div>
+        <h1>RabTech Enterprise Manager</h1>
+        <p>Production Capstone Dashboard</p>
+    </div>
+
+    <button id="logoutBtn" class="danger-btn" hidden>
+        Logout
+    </button>
+</header>
+
+
+<main class="container">
+
+    <!-- LOGIN -->
+    <section id="loginSection" class="card">
+        <h2>Admin Login</h2>
+
+        <p class="muted">
+            Demo authentication for capstone evaluation.
+        </p>
+
+        <form id="loginForm">
+
+            <label for="loginEmail">Email</label>
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="admin@rabtech.com"
+                required
+            >
+
+            <label for="loginPassword">Password</label>
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="Enter password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+            <p id="loginMessage" role="alert"></p>
+        </form>
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboardSection" hidden>
+
+        <div class="welcome card">
+            <h2>Welcome to the Dashboard 👋</h2>
+            <p>
+                Manage products using dynamic CRUD operations.
+                Data persists using browser localStorage.
+            </p>
+        </div>
+
+
+        <!-- STATS -->
+        <div class="stats">
+
+            <article class="stat-card">
+                <span>Total Products</span>
+                <strong id="totalProducts">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Categories</span>
+                <strong id="totalCategories">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Stock Items</span>
+                <strong id="totalStock">0</strong>
+            </article>
+
+        </div>
+
+
+        <!-- PRODUCT FORM -->
+        <section class="card">
+
+            <h2 id="formTitle">Add Product</h2>
+
+            <form id="productForm">
+
+                <input type="hidden" id="productId">
+
+                <label for="productName">Product Name</label>
+                <input
+                    id="productName"
+                    type="text"
+                    placeholder="Enter product name"
+                    required
+                >
+
+                <label for="productCategory">Category</label>
+                <select id="productCategory" required>
+                    <option value="">Select category</option>
+                    <option>Electronics</option>
+                    <option>Software</option>
+                    <option>Education</option>
+                    <option>Services</option>
+                </select>
+
+                <label for="productPrice">Price</label>
+                <input
+                    id="productPrice"
+                    type="number"
+                    min="0"
+                    placeholder="Enter price"
+                    required
+                >
+
+                <label for="productStock">Stock</label>
+                <input
+                    id="productStock"
+                    type="number"
+                    min="0"
+                    placeholder="Enter stock"
+                    required
+                >
+
+                <div class="form-actions">
+
+                    <button type="submit" id="saveProductBtn">
+                        Add Product
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelEditBtn"
+                        class="secondary-btn"
+                        hidden
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+        </section>
+
+
+        <!-- SEARCH -->
+        <section class="card">
+
+            <h2>Product Catalog</h2>
+
+            <div class="filters">
+
+                <input
+                    id="productSearch"
+                    type="search"
+                    placeholder="Search products..."
+                >
+
+                <select id="categoryFilter">
+                    <option value="All">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Software">Software</option>
+                    <option value="Education">Education</option>
+                    <option value="Services">Services</option>
+                </select>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+            <p id="emptyMessage" class="muted"></p>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>RabTech Academy • Production Capstone Project</p>
+</footer>
+
+
+<script src="capstone.js"></script>
+
+</body>
+</html>
