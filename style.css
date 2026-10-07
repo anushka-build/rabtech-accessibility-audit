@@ -572,3 +572,62 @@ svg {
     animation: none !important;
   }
 }
+.user-controls {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+}
+
+.user-controls input,
+.user-controls select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.role-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.role-filters button {
+    width: auto;
+    min-height: 44px;
+}
+
+.role-filters button[aria-pressed="true"] {
+    background: var(--primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+#loadingMessage {
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+#errorMessage {
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    background: rgba(220, 38, 38, 0.12);
+}
+
+#userTableBody tr:hover td {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+@media (max-width: 480px) {
+    .role-filters {
+        flex-direction: column;
+    }
+
+    .role-filters button {
+        width: 100%;
+    }
+}

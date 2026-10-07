@@ -45,6 +45,64 @@
 
             <section id="users" aria-labelledby="users-heading">
                 <h2 id="users-heading">User Information</h2>
+                <div class="user-controls">
+
+    <label for="userSearch">Search users</label>
+
+    <input
+        type="search"
+        id="userSearch"
+        placeholder="Search by name or email..."
+        autocomplete="off"
+    >
+
+    <div class="role-filters" aria-label="Filter users by role">
+
+        <button
+            type="button"
+            data-role="All"
+            aria-pressed="true">
+            All
+        </button>
+
+        <button
+            type="button"
+            data-role="Student"
+            aria-pressed="false">
+            Student
+        </button>
+
+        <button
+            type="button"
+            data-role="Developer"
+            aria-pressed="false">
+            Developer
+        </button>
+
+        <button
+            type="button"
+            data-role="Manager"
+            aria-pressed="false">
+            Manager
+        </button>
+
+    </div>
+
+    <label for="userSort">Sort users</label>
+
+    <select id="userSort">
+        <option value="name-asc">Name A-Z</option>
+        <option value="name-desc">Name Z-A</option>
+        <option value="email-asc">Email A-Z</option>
+    </select>
+
+    <p id="loadingMessage" role="status" aria-live="polite" hidden>
+        Loading users...
+    </p>
+
+    <p id="errorMessage" role="alert" hidden></p>
+
+</div>
 
                 <table>
                     <caption>User account information</caption>
@@ -57,19 +115,8 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>Anushka</td>
-                            <td>anushka@example.com</td>
-                            <td>Student</td>
-                        </tr>
-
-                        <tr>
-                            <td>Rahul</td>
-                            <td>rahul@example.com</td>
-                            <td>Developer</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="userTableBody">
+</tbody>
                 </table>
             </section>
 
@@ -161,5 +208,7 @@
         reportDialog.close();
     });
 </script>
+<script type="module" src="api.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>
